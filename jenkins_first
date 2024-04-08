@@ -1,15 +1,15 @@
 pipeline {
-  agent any
-    stages (creating an file simple) {
-      stage (1-stage) {
+  agent any 
+   stages ('checking') {
+     stage ('romeo stage'){
        steps {
-        sh 'touch pipe'
-    }
-    }
-       stage (2-stage) {
-         steps {
-          sh 'touch pipe2'
-    }
-   }
+         echo "how are you doing romeo"         
+}
+}
+         stage ('creaging stage') {
+           steps {
+              sh 'touch pipe1'         
+}
+}
 }
 }
