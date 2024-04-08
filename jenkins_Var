@@ -1,0 +1,20 @@
+pipeline {
+ agent any
+  environment {
+    name=Vedit
+    place=bangalore
+  }
+   stages ('checking the variables by introducting env block') {
+     stage ('checking env') {
+       steps {
+          echo "hi my name is ${name}"
+          echo "i am from ${place}"
+       }
+     }
+        stage ('checking global env') {
+          steps {
+           echo "the bulild number is ${env.BUILD_NUMBER} and the build ID is ${env.BUILD_ID} and the job number is ${env.JOB_NAME} with the node name ${env.NODE_NAME}"
+       }
+     }
+   }
+}
