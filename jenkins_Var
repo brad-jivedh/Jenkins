@@ -1,14 +1,14 @@
 pipeline {
  agent any
   environment {
-    name=Vedit
-    place=bangalore
+    name='Vedit'
+    place='Bangalore'
   }
    stages ('checking the variables by introducting env block') {
      stage ('checking env') {
        steps {
           echo "hi my name is ${name}"
-          echo "i am from ${place}"
+          echo "I am from ${place}"
        }
      }
         stage ('checking global env') {
