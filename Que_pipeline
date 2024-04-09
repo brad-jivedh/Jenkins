@@ -3,7 +3,7 @@ pipeline {
        stages ('Stage-1') {
          stage ('Directory stage'){
           steps {
-           sh '''mkdir File1'''
+           sh '''mkdir File'''
         }
       }
     }
