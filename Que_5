@@ -8,7 +8,7 @@ pipeline {
         steps {
           emailext body: '''Hello brad,
  PF the details as requested by you.
-The job name is ${env.JOB_NAME} with the job url ${env.JOB_URL} and the build number is ${env.BUILD_NUMBER}"''', subject: 'Job details', to: 'bhavani.shankarn1995@gmail.com'
+The job name is ${JOB_NAME} with the job url ${JOB_URL} and the build number is ${BUILD_NUMBER}"''', subject: 'Job details', to: 'bhavani.shankarn1995@gmail.com'
         }
 
       }
