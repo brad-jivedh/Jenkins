@@ -6,9 +6,9 @@ pipeline {
    stages ('All details') {
       stage ('JOb details') {
         steps {
-           echo "Hi my name is ${name}. The job name is ${env.JOB_NAME} with the job url ${env.JOB_URL} and the build number is ${env.BUILD_NUMBER}"
-           emailext body: '''Hello Brad,
-           PFA the console output of the Job Que 5''', subject: 'Job details', to: 'Bhavani.shankarn1995@gmail.com'
+          emailext body: '''Hello brad,
+ PF the details as requested by you.
+The job name is ${env.JOB_NAME} with the job url ${env.JOB_URL} and the build number is ${env.BUILD_NUMBER}"''', subject: 'Job details', to: 'bhavani.shankarn1995@gmail.com'
         }
 
       }
