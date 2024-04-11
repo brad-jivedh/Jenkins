@@ -1,8 +1,8 @@
 pipeline {
  agent any 
-  environmnent {
-   name='Brad'
-  }
+  environment {
+	  	name='Brad'
+	}
    stages ('All details') {
       stage ('JOb details') {
         steps {
