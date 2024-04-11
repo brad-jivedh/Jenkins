@@ -6,7 +6,7 @@ pipeline {
    stages ('All details') {
       stage ('JOb details') {
         steps {
-           echo "The job name is $(JOB_NAME) with the job url $(JOB_URL) and the build number is $(BUILD_NUMBER)
+           echo "The job name is $(JOB_NAME) with the job url $(JOB_URL) and the build number is $(BUILD_NUMBER)"
         }
 
       }
