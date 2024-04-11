@@ -1,0 +1,14 @@
+pipeline {
+ agent any 
+  environmnent {
+  
+  }
+   stages ('All details') {
+      stage ('JOb details') {
+        steps {
+           echo "The job name is $(env.JOB_NAME) with the job url $(env.JOB_URL) and the build number is $(env.BUILD_NUMBER)
+        }
+
+      }
+   }
+}
