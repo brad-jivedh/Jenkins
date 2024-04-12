@@ -9,8 +9,7 @@ pipeline {
         stage ('Buil stage') {
           steps {
             echo "Building the code...."
-              sh '''mvn -version
-                    mvn clean install'''
+              sh 'mvn clean install'
        }
      }
         stage ('Push') {
