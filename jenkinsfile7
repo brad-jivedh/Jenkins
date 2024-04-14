@@ -6,6 +6,8 @@ pipeline {
   }
   environment {
   name='Bhavanishankar.N'
+  place='Bangalore'
+  Inst='Artisantek'
   }
   parameters {
     booleanParam defaultValue: true, name: 'my_bool'
@@ -24,8 +26,8 @@ pipeline {
      steps{
             echo "Hello everyone"
             sh 'My name is ${name}'
-            sh 'The Environment on which the build is running is ${ENV}'
-            sh 'The delfault boolean value is ${my_bool}'
+            sh 'I am from ${place}'
+            sh 'I am learning devops from ${Inst}'
      }
    }
 }
