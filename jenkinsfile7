@@ -1,17 +1,16 @@
 pipeline {
   agent none
-  triggers {
-   cron '* * * * *'
-   pollSCM '* * * * *'
+   triggers {
+    cron '* * * * *'
+    pollSCM '* * * * *'
  }
- environment {}
- parameters {
-  booleanParam defaultValue: true, name: 'my_bool'
-  choice choices: ['UAT', 'PROD', 'DEV'], name: 'ENV'
-  string defaultValue: 'BhavaniShankar.N', name: 'name'
+  environment {}
+   parameters {
+    booleanParam defaultValue: true, name: 'my_bool'
+    choice choices: ['UAT', 'PROD', 'DEV'], name: 'ENV'
+    string defaultValue: 'BhavaniShankar.N', name: 'name'
  }
-
-  stages {
+   stages {
     stage('Stage-1') {
       agent {label 'Master'}
         steps {
@@ -19,27 +18,27 @@ pipeline {
         }
     } 
 }
-stages {
- stage('Stage-2') {
-  agent {label 'Master'}
-    steps {
-      echo "Hello everyone"
-      sh 'My name is $name'
-      sh 'The Environment on which the build is running is $ENV'
-      sh 'The delfault boolean value is $my_bool'
+    stages {
+     stage('Stage-2') {
+       agent {label 'Master'}
+        steps {
+          echo "Hello everyone"
+           sh 'My name is $name'
+           sh 'The Environment on which the build is running is $ENV'
+           sh 'The delfault boolean value is $my_bool'
     }
  }
 }
-post {
+ post {
   success {
     echo "Stage-2 succesfully executed"
   }
 }
- stages {
-  stage('Stage-3') {
-   agent {label 'Slave_node'}
-    steps {
-      sh "the Job name is ${env.JOB_NAME} with the build number ${env.BUILD_ID} and the jenkins url is ${env.JENKINS_URL}" 
+  stages {
+   stage('Stage-3') {
+    agent {label 'Slave_node'}
+     steps {
+       sh "the Job name is ${env.JOB_NAME} with the build number ${env.BUILD_ID} and the jenkins url is ${env.JENKINS_URL}" 
    }
 }
 }
@@ -48,11 +47,11 @@ post {
     echo "Stage-3 succesfully executed"
   }
 }
- stages {
-  stage('Stage-4') {
-   agent {label 'Slave_node'}
-    steps {
-      echo "this is the last stage"
+   stages {
+     stage('Stage-4') {
+       agent {label 'Slave_node'}
+         steps {
+          echo "this is the last stage"
     }
  }
 }
