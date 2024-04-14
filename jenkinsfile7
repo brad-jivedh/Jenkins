@@ -4,7 +4,9 @@ pipeline {
     cron '* * * * *'
     pollSCM '* * * * *'
  }
-  environment {}
+  environment {
+
+  }
    parameters {
     booleanParam defaultValue: true, name: 'my_bool'
     choice choices: ['UAT', 'PROD', 'DEV'], name: 'ENV'
