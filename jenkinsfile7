@@ -1,8 +1,8 @@
 pipeline {
  agent none
   triggers {
-    cron '* * * * *'
-    pollSCM '* * * * *'
+    cron '* * * * '
+    pollSCM '* * * * '
   }
   environment {
   name='Bhavanishankar.N'
@@ -23,9 +23,9 @@ pipeline {
     agent {label 'Master'}
      steps{
             echo "Hello everyone"
-            sh 'My name is $name'
-            sh 'The Environment on which the build is running is $ENV'
-            sh 'The delfault boolean value is $my_bool'
+            sh 'My name is ${name}'
+            sh 'The Environment on which the build is running is ${ENV}'
+            sh 'The delfault boolean value is ${my_bool}'
      }
    }
 }
