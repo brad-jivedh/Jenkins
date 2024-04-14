@@ -16,7 +16,7 @@ pipeline {
    stage('Stage-1') {
      agent {label 'Master'}
       steps {
-        git branch: main, url: 'https://github.com/brad-jivedh/Jenkins.git'
+        git branch: 'main', url: 'https://github.com/brad-jivedh/Jenkins.git'
       }
    } 
    stage('Stage-2') {
