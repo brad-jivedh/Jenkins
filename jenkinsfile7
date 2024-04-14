@@ -21,7 +21,8 @@ pipeline {
         }
     } 
 }
-      stage('Stage-2'){
+
+      stage('Stage-2') {
         agent {label 'Master'}
          steps {
            echo "Hello everyone"
@@ -35,7 +36,8 @@ pipeline {
     echo "Stage-2 succesfully executed"
   }
 }
-        stage('Stage-3'){
+
+        stage('Stage-3') {
           agent {label 'Slave_node'}
             steps {
               sh "the Job name is ${env.JOB_NAME} with the build number ${env.BUILD_ID} and the jenkins url is ${env.JENKINS_URL}" 
@@ -46,7 +48,8 @@ post {
     echo "Stage-3 succesfully executed"
   }
 }
-           stage('Stage-4'){
+
+           stage('Stage-4') {
              agent {label 'Slave_node'}
                steps {
                 echo "this is the last stage"
