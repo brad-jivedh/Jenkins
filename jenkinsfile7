@@ -22,9 +22,9 @@ pipeline {
     agent {label 'Master'}
      steps{
             echo "Hello everyone"
-            sh "My name is ${env.name}"
-            sh "I am from ${env.place}"
-            sh "I am learning devops from ${env.Inst}"
+            echo "My name is ${name}"
+            echo "I am from ${place}"
+            echo "I am learning devops from ${Inst}
      }
    }
 }
