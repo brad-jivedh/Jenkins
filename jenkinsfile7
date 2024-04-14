@@ -39,7 +39,7 @@ post {
   stage('Stage-3') {
    agent {label 'Slave_node'}
     steps {
-      sh "the Job name is ${env.JOB_NAME} with the build number ${env.BUILD_ID} and the jenkins url is ${env.JENKINS_URL} 
+      sh "the Job name is ${env.JOB_NAME} with the build number ${env.BUILD_ID} and the jenkins url is ${env.JENKINS_URL}" 
    }
 }
 }
