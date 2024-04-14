@@ -25,6 +25,8 @@ pipeline {
             echo "My name is ${name}"
             echo "I am from ${place}"
             echo "I am learning devops from ${Inst}
+            echo "The boolean value is ${my_bool}, and the environement is ${ENV}
+         
      }
    }
 }
