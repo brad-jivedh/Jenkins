@@ -17,7 +17,7 @@ pipeline {
         git branch: main, url: 'https://github.com/brad-jivedh/Jenkins.git'
       }
    } 
-   stage('Stage-2) {
+   stage('Stage-2') {
     agent {label 'Master'}
      steps{
             echo "Hello everyone"
