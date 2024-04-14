@@ -5,7 +5,7 @@ pipeline {
     pollSCM '* * * * *'
   }
   environment {
-  name=Bhavanishankar.N
+  name='Bhavanishankar.N'
   }
   parameters {
     booleanParam defaultValue: true, name: 'my_bool'
