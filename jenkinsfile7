@@ -29,5 +29,15 @@ pipeline {
          
      }
    }
+ post {
+  success {
+    echo "Stage-2 succesfully executed"
+  }
+}
+stage('Stage-3) {
+ steps{
+  echo "The job url is ${env.JOB_URL} and the build no is ${env.BUILD_ID} and the jenkins url is ${env.JENKINS_URL}"
+ }
+}
 }
 }
