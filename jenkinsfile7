@@ -1,11 +1,30 @@
 pipeline {
  agent none
+  triggers {
+    cron '* * * * *'
+    pollSCM '* * * * *'
+  }
+  environment {}
+  parameters {
+    booleanParam defaultValue: true, name: 'my_bool'
+    choice choices: ['UAT', 'PROD', 'DEV'], name: 'ENV'
+    string defaultValue: 'BhavaniShankar.N', name: 'name'
+  }
   stages {
    stage('Stage-1') {
      agent {label 'Master'}
       steps {
-        echo "hello how are you?"
+        git branch: main, url: 'https://github.com/brad-jivedh/Jenkins.git'
       }
    } 
-  }
+   stage('Stage-2) {
+    agent {label 'Master'}
+     steps{
+            echo "Hello everyone"
+            sh 'My name is $name'
+            sh 'The Environment on which the build is running is $ENV'
+            sh 'The delfault boolean value is $my_bool'
+     }
+   }
+}
 }
