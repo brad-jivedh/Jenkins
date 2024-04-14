@@ -35,5 +35,11 @@ pipeline {
         echo "the bulild number is ${env.BUILD_NUMBER} and the build ID is ${env.BUILD_ID} and the job number is ${env.JOB_NAME} with the node name ${env.NODE_NAME}"
   }
   }
+    stage('Stage-4') {
+      agent {label 'Slave_node'}
+        steps {
+          echo "This is the last stage with the Jenkins url ${env.JENKINS_URL}"
+        }
+    }
 }
 }
