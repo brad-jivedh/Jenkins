@@ -29,15 +29,15 @@ pipeline {
          
      }
    }
- post {
-  success {
-    echo "Stage-2 succesfully executed"
-  }
-}
+      post {
+       success {
+        echo "Stage-2 succesfully executed"
+       }
+     }
    stage('Stage-3') {
      agent {label 'Slave_node'}
        steps{
-        echo "The job url is ${env.JOB_URL} and the build no is ${env.BUILD_ID} and the jenkins url is ${env.JENKINS_URL}"
+        echo "the bulild number is ${env.BUILD_NUMBER} and the build ID is ${env.BUILD_ID} and the job number is ${env.JOB_NAME} with the node name ${env.NODE_NAME}"
   }
   }
 }
