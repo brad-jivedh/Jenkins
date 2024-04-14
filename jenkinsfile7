@@ -29,12 +29,6 @@ pipeline {
          
      }
    }
-    post {
-      success {
-        echo "Stage-2 executed successfully"
-      }
-    }
-
    stage('Stage-3') {
      agent {label 'Slave_node'}
        steps{
